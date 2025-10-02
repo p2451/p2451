@@ -1,0 +1,160 @@
+:root {
+  --cor-fundo: #BF8450;
+  --cor-texto: #26110C;
+  --cor-destaque: #401B13;
+  --cor-borda-sutil: #8C5A3A;
+  --cor-fundo-caixa: #d0b08f;
+  --cor-clara: #ffffff;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:"Times New Roman", Times, serif;
+  line-height: 1.7;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  font-size: 16px;
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding:  0 1rem;
+}
+h1, h2, h3 {
+  color: var(--cor-destaque);
+}                   
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: static;
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--cor-destaque);
+  color: var(--cor-clara);
+  font-weight: bold;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+header {
+  background: var(--cor-fundo-caixa);
+  padding: 1rem 0;
+  text-align: center;
+  border-bottom: 2px solid var(--cor-borda-sutil);
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+  color: var(--cor-destaque);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--cor-texto);
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  background: var(--cor-destaque);
+  color: var(--cor-clara);
+}
+
+
+main {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 1.5rem;
+  padding: 1.5rem 0; 
+}
+
+
+article img {
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+  width: 100px; 
+  height: righta;
+  border-radius: 8px;
+}
+
+article p,
+article ul {
+  margin-top: 0.5rem;
+  text-align: justify;
+  background: var(--cor-fundo-caixa);
+  padding: 0.75rem;
+  border-radius: 6px;
+}
+
+
+aside {
+  background: var(--cor-fundo-caixa);
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 4px solid var(--cor-destaque);
+}
+
+
+@media (min-width: 768px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem; 
+  }
+}
+  main.container { 
+    grid-template-columns: 2fr 1fr; 
+    gap: 2rem;
+  }
+
+  article img {
+    width: 300px; 
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px; 
+  }
+
+  main.container {
+    grid-template-columns: 3fr 1fr;
+    gap: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  article img {
+    width: 400px; 
+  }
+
+ 
+}
